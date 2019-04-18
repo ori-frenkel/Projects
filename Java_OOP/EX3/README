@@ -1,0 +1,210 @@
+ori.frenkel
+
+
+
+
+=============================
+=      File description     =
+=============================
+SimpleHashSet.java - An abstract class (abstract because there is no need to make an instance of that class),
+This class represent things that each HashSet should have, For example contains,delete,add and so on methods.
+The main methods are add,contains,delete,size,capacity,clamp.
+
+WrapperLinkedList.java - The purpose of the class is to wrap a linkedList.
+The main methods are : add,contains,delete,size. (and of course the constructor)
+
+OpenHashSet.java - a hash-set based on chaining. The purpose of the class is to create an openHashSet, a way
+to store search and delete Strings. Main methods:delete,contains,reHashing,add,
+
+ClosedHashSet.java -a hash-set based on closed-hashing with quadratic probing. Extends SimpleHashSet.
+Purpose, another hashSet, it's purpose in to contain and delete and search for strings in a quick way for
+certain operation, Main methods:add,reHashing,delete,contains
+
+
+CollectionFacadeSet.java - Main purpose is  to wrap an object implementing java’s Collection<String> interface
+Main methods : add,contains,delete,size
+
+
+SimpleSetPerformanceAnalyzer.java - has a main method that measures the run-times requested in the
+“Performance Analysis” section. The main purpose is to check and print the times it's take each data structure
+to do certain operation.
+Main methods : FinalTimes.
+
+=============================
+=          Design           =
+=============================
+
+
+
+
+=============================
+=  Implementation details   =
+=============================
+
+
+=============================
+=    Answers to questions   =
+=============================
+QS - How you implemented OpenHashSet’s table.
+ANS - Using Wrapper class, I built WrapperLinkedList class, which wrap LinkedList and I created HashSet using
+this class.
+
+QS - How you implemented the deletion mechanism in ClosedHashSet.
+ANS - First of all I checks that the String that we want to delete is legal string, meaning it's not null and
+that the string is actually in the HashSet (if it's not return false).
+Than checks for shrink, if there is a need to shrink that array in order to keep the Load Factory legal.
+Than run a for loop in times of the HashSet length, Each loop iteration, getting the index that the string
+that we want to delete should be, if that string in null, than return false (meaning that the string is not in
+the HashSet), if the object that in the index isn't the DELETED object(compare objects) and that object equals
+to the String  that we want to delete than delete that string - meaning put in that index the DELETED object
+and decrease the size by 1.
+if after all the for loops, the function didn't return anything, than return false, which meaning that the
+String wasn't deleted.
+
+QS - The results of the analysis
+ANS -
+#These values correspond to the time it takes (in ms) to insert data1 to all data structures
+OpenHashSet_AddData1 = 29566
+ClosedHashSet_AddData1 = 86171
+TreeSet_AddData1 = 46
+LinkedList_AddData1 = 33200
+HashSet_AddData1 = 42
+
+#These values correspond to the time it takes (in ms) to insert data2 to all data structures
+OpenHashSet_AddData2 = 34
+ClosedHashSet_AddData2 = 21
+TreeSet_AddData2 = 17
+LinkedList_AddData2 = 24
+HashSet_AddData2 = 16
+
+#These values correspond to the time it takes (in ns) to check if "hi" is contained in
+#the data structures initialized with data1
+OpenHashSet_Contains_hi1 = 26
+ClosedHashSet_Contains_hi1 = 33
+TreeSet_Contains_hi1 = 103
+LinkedList_Contains_hi1 = 665778
+HashSet_Contains_hi1 = 30
+
+#These values correspond to the time it takes (in ns) to check if "-13170890158" is contained in
+#the data structures initialized with data1
+OpenHashSet_Contains_negative = 461680
+ClosedHashSet_Contains_negative = 2267573
+TreeSet_Contains_negative = 136
+LinkedList_Contains_negative = 623052
+HashSet_Contains_negative = 43
+
+#These values correspond to the time it takes (in ns) to check if "23" is contained in
+#the data structures initialized with data2
+OpenHashSet_Contains_23 = 30
+ClosedHashSet_Contains_23 = 29
+TreeSet_Contains_23 = 31
+LinkedList_Contains_23 = 31
+HashSet_Contains_23 = 30
+
+#These values correspond to the time it takes (in ns) to check if "hi" is contained in
+#the data structures initialized with data2
+OpenHashSet_Contains_hi2 = 27
+ClosedHashSet_Contains_hi2 = 41
+TreeSet_Contains_hi2 = 42
+LinkedList_Contains_hi2 = 43
+HashSet_Contains_hi2 = 41
+
+
+
+QS - The number of iterations in your warm-up phase
+ANS - 25000
+
+QS - Discuss the results of the analysis in depth
+SUB_QS - Account, in separate, for OpenHashSet’s and ClosedHashSet’s bad results for data1.txt
+SUB_ANS -
+
+SUB_QS - Summarize the strengths and weaknesses of each of the data structures as reflected by
+         the results. Which would you use for which purposes?
+SUB_ANS -
+OpenHashSet strengths :
+ - It has the fastest time to check if "hi" contain in data 1 when initialized.
+ - It has One of the fastest time to check if "23" contain in data 2 when initialized.
+ - It has by far (around 1.5 times faster than the other structure) the fastest time to check if "hi" is
+   contained in the data structures initialized with data2
+OpenHashSet weakness :
+ - It has a longer time by far to to insert data 1 (compare to HashSet or TreeSet)
+ - It has the longest time to insert data2 to all data structures
+ - It has by far longer time to check if "-13170890158" is contained in the data structures initialized with
+ data1 (compared to HashSet or TreeSet)
+
+ClosedHashSet strengths :
+ - It has the fastest time to check if "23" is contained in the data structures initialized with data2
+ - it has decent (not the best) time to check if "hi" is contained in the data structures initialized with
+ data1
+ - It has decent (2'rd or 3'rd ) to check if "hi" is contained in the data structures initialized with data2
+CloseHashSet weakness :
+ - it has one of the worst times to insert data 1 to all data structures
+ - it has the worst time to insert data2 to all data structures
+ - it has bad time to check if "-13170890158" is contained in the data structures initialized with data1
+
+TreeSet strengths :
+ - It has a good time to insert data 1 to all data structures
+ - It has a very good time to insert data2 to all data structures
+ - It has decent (even though HashSet is faster 3 times more than this) time to check if "-13170890158" is
+   contained in the data structures initialized with data1
+TreeSet weakness :
+ - There are much faster option to check if "hi" is contained in the data structures initialized with data1
+ - It has the worst time to check if "23" is contained in the data structures initialized with data2
+ - It has one of the worst time to to check if "hi" is contained in the data structures initialized with data2
+
+LinkedList strengths :
+ - None, there is always a better choice (maybe if memory is important to you)
+
+LinkedList weakness :
+ - It has bad time to insert data1 to all data structures
+ - It has bad time to insert data2 to all data structures
+ - It has the worst time to check if "hi" is contained in the data structures initialized with data1
+ - It has bad time to check if "-13170890158" is contained in the data structures initialized with data1
+ - It has bad time to check if "23" is contained in the data structures initialized with data2
+ - it has bad time to check if "hi" is contained in the data structures initialized with data2
+
+HashSet strengths :
+ - There are better option to check if "hi" is contained in the data structures initialized with data2
+HashSet weakness :
+ - It has the best time to insert data1 to all data structures
+ - It has the best time to insert data2 to all data structures
+ - It has the 2'nd best time to check if "hi" is contained in the data structures initialized with data1
+ - It has the best time to check if "-13170890158" is contained in the data structures initialized with data1
+ - It has average/ decent time to check if "23" is contained in the data structures initialized with data2
+
+SUB_QS - How did your two implementations compare between themselves
+SUB_ANS - They have the same advantage and disadvantage,
+- openHash is by far better to insert data1 to all data structures compare to closeHash
+- CloseHash is better (by around 1.6 times) to insert data2 to all data structures compare to OpenHash
+- OpenHash it better to check if "hi" is contained in the data structures initialized with data1 compare to
+  closeHash
+- OpenHash is by far better than closeHash to check if "-13170890158" is contained in the data structures
+  initialized with data1
+- CloseHash and OpenHash have about the same time to check if "23" is contained in the data structures
+  initialized with data2 (though if we want to be really accurate CloseHash is better in this)
+- OpenHash has a better time compare to CloseHash to check if "hi" is contained in the data structures
+  initialized with data2
+
+Sub_QS - How did your implementations compare to Java’s built in HashSet?
+SUB_ANS - In some areas about the same or even better, and on other areas by far worse than java HashSet:
+better/or about the same in :
+- to check if "hi" is contained in the data structures initialized with data2
+- to check if "23" is contained in the data structures initialized with data2
+- to check if "hi" is contained in the data structures initialized with data1
+
+by far worst than java's HashSet :
+- to check if "-13170890158" is contained in the data structures initialized with data1
+- to insert data2 to all data structures (here not by far, by around 1.5 times worst)
+- to insert data1 to all data structures
+
+SUB_QS - What results surprised you and which did you expect?
+SUB_ANS - All the contained  operation surprised me, and I did except for the insert operation (I thought that
+java built in HashSet would be the best for everything, which is not the case)
+
+SUB_QS - Did you find java’s HashSet performance on data1.txt surprising? Can you explain it? Can
+         google? (no penalty if you leave this empty)
+SUB_ANS - empty
+
+SUB_QS - If you tried clamping expressions to valid indices in more than one way, what were they
+         and how significant was the speed-up?
+SUB_ANS - I didn't tried in more than one way.

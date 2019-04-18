@@ -1,0 +1,38 @@
+ori.frenkel
+
+
+
+
+=============================
+=      File description     =
+=============================
+Book.java - The class represent the book object, has a few methods the relate to the book, each method
+explain in the file
+Patron.java - This class represent the patron, the class include method the relate to the patron and things
+that he can do, there is an explanation for each method in the file.
+Library.java - This class represent a library and includes a method that the library can do, for each method
+there is an explanation in the file itself
+
+
+
+=============================
+=          Design           =
+=============================
+I implemented the class according to the instruction, I had a few ideas about how to create the id's of the
+book/patron, at first I thought that the Id would be determined by the name (convert each character of the
+name to a number) but, I asked in the forum if there is a possibility of two patrons with the same names,
+(and the answer was yes)
+so this idea won't work well. So eventually I choose that the ID would be determined by the location of the
+book/patron in the array (of the library).
+
+
+
+=============================
+=  Implementation details   =
+=============================
+Same answer as in the design section. (implanted as instructed in the question, and explained each function
+in the file itself)
+
+=============================
+=    Answers to questions   =
+=============================

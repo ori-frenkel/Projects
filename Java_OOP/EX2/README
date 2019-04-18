@@ -1,0 +1,86 @@
+ori.frenkel
+
+
+
+
+=============================
+=      File description     =
+=============================
+SpaceShip.java - A guide line for all the space ship, what each ship should include.
+HumanSpaceShip.java - Inherit from SpaceShip, make a move according to the user input.
+RunnerSpaceShip.java - Inherit from SpaceShip, this space ship always trying to avoid and run away from other
+ ships
+BasherSpaceShip.java - Inherit from RunnerSpaceShip (and because of transition also from SpaceShip), this ship
+has the same image as the runner space ship, and so inherit the image from that ship, this ship trying to ram
+other space ship, and when close to other ships, trying to active the shield.
+AggressiveSpaceShip - Inherit from BasherSpaceShip (and because of transition from SpaceShip and
+BasherSpaceShip) Inherit the image, and inherit the pursue function from BasherSpaceShip - meaning this ship
+would try to pursue other ship, this ship tries to pursue other ships and shot it when close.
+SpecialSpaceShip - Inherit from AggressiveSpaceShip, this ship inherit the behavior of the aggressive ship,
+it would try to pursue other ship and shot it down when close to them. In addition, this ship has almost
+always shield on, and a lot more energy the the normal ships.
+
+
+=============================
+=          Design           =
+=============================
+I decided to make the SpaceShip abstract class, because SpaceShip is something general, that all the kinds of
+need tp has, (All the ships are "kind of" SpaceShip therefor I choose abstract and not interface),
+ In addition There is no need or reason or logic to make an instance of the SpaceShip class
+which lead me to choose this class as abstract. Of course that I used inheritance, there are method that are
+linked to all space ship, for example each space ship has health and energy and more, so with the inheritance
+method,  I didn't needed to make a duplicate code, and all the other class which has same properties inherited
+it. In addition I choose made the SpaceShip class abstract class because each space ship behave differently
+so I could make the behave function (doAction function) abstract function, and therefor I wouldn't need to
+write a code which is always overridden.
+I made the getImage function an abstract method because each ship has different image, and if there is a few
+classes with the same image, they could inherent from one class that implemented the desire image. ( I felt
+that make this class just "normal" insistence class would be for nothing because most time I would need to
+override it, and it seemed to me a better more organized solution that each class would implement the image
+that is need for that class, and if that image already implemented in other class, than that class would
+just inherit that function.
+For example, in this human space ship has different image than all the other classes, so it would implement
+the image in it's class, but all the other space ship has the same image function (getImage function) so
+I implemented the getImage in one class (RunnerSpaceShip class) and all the other function inherit this
+function from this class (and with transition would keep inherit the SpaceShip class).
+and if there was a new space ship that has the same image as human space ship or "robot" space ship, it could
+just inherit the desire function from one of the classes that already implemented this method.
+and if the class would need to implement new image method, it could just do it, and there would be no override
+of "useless code" from the SpaceShip because this function is abstract. which add to the Modularity of the
+code.
+In addition, if for example, I would decide that each space ship should have a new propriety, for example  a
+color, I could add it easily to the SpaceShip class and all the space ships would have this  propriety
+because they would inherit this. this thing made the code much more Modularity.
+
+– Intuitiveness and understandability -
+I designed the code so it would be very clear to understand it, there is no duplication, it is clear what
+each space ship has, what it inherit from the other classes, and very easy to modify the code.
+
+In addition it is easy to understand the incidence, I made the class and the inheritance very logically and
+I made the code short without unnecessary information (which could lead to confusion)
+
+
+=============================
+=  Implementation details   =
+=============================
+
+
+=============================
+=    Answers to questions   =
+=============================
+behavior of the drunkard ship -
+	Story time, the pilot of this spaceship had too many drinks, and forgot that there is a fire button,
+	so this ship won't fire	, moreover the pilot love the speed (therefor always accelerate forward),
+	In addition, the pilot just click the teleport button and the shield button randomly (the drinks made him
+	an urge to click buttons, and the teleport button is bigger than the shield button, therefor he would
+	 click randomly the button, but would hit the bigger button more times than the small button)
+
+behavior of the special ship -
+	Story time, this class represent the special force of the galactic authorities, the ship of the special
+	force is much stronger and has much more firepower than the average spaceship, this ship purpose is to
+	destroy all of the criminal in the galaxy, and therefor the ship pursue the criminal ships. (moreover
+	the ship shield are very strong and almost impossible to breach there for the special force developed a
+	fast tactic of destroy ship, which is to pursue criminal ship's and ram and shoot them.)
+	In addition, the special ship has a nuclear power ship, which mean is almost unlimited amount of energy.
+	The ship wont teleport because the nuclear power in sensitive to it.
+	(the shield is off only for maintenance 1 per 100 round on average)

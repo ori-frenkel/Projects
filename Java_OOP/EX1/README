@@ -1,0 +1,53 @@
+ori.frenkel
+
+
+
+
+=============================
+=      File description     =
+=============================
+Book.java - The class represent the board (Nim board), we got this class and didn't made change in this
+class.
+
+Move.java - The Move class represents a move in the Nim game by a player.
+A move consists of the row on which it is applied, the left bound (inclusive) of the sequence of sticks to
+mark, and the right bound (inclusive) of the same sequence. - implemented this class according to the javadoc
+
+Player.java - The Player class represents a player in the Nim game, producing Moves as a response to a Board
+state. Each player is initialized with a type, either human or one of several computer strategies, which
+defines the move he produces when given a board in some state. - all the design and Implementation details
+was quite ordinary (except the produceSmartMove function), the main goal of the design was to make small
+function, so the code would be clear to understand and easy to change later on.
+about Implementation details - did almost everything according to the javadoc except the produceSmartMove.
+produceSmartMove - explanation about the function in the "Answers to questions" section.
+
+Competition.java - The Competition class represents a Nim competition between two players, consisting of a
+given number of rounds. It also keeps track of the number of victories of each player. - all the design and
+Implementation details was quite ordinary, same as always, did everything as instructed in the javadoc and
+tried to make small function instead of big ones, so the code would be readable and easy to change later on.
+
+
+=============================
+=          Design           =
+=============================
+The main design of all the classes was to make as much as possible function, so the function would be short,
+and easy to understand and change later on.
+
+
+
+=============================
+=  Implementation details   =
+=============================
+In the excise that isn't much to say in this section, the Implementation was quite ordinary - did everything
+according to the javadoc, explained each implementation in the description
+
+=============================
+=    Answers to questions   =
+=============================
+Explain of my implementation  of the Smart player (produceSmartMove) - The idea is that the smart player
+always aim that the board will contain uneven number of sticks. (when there is uneven number of sticks, the
+opponent would must to pick the last stick). I implement this idea by - if there is even number of sticks on
+the board, then called to the function that make a move of 1 stick, so after it, there is uneven numbers
+of sticks in the board . if there is uneven numbers of sticks on the board, so in order to keep it that way,
+the smart player aim to pick 2 sticks if possible (if not possible then just make a random move of 1 stick).
+that way the smart player win most of the game against the random player.

@@ -1,0 +1,76 @@
+ori.frenkel
+nccse4395
+
+
+
+=============================
+=      File description     =
+=============================
+BST.java - this class represent Binary Search Tree
+AvlNode.java - this class represent a node in the  tree (any tree and specifically  the AvlTree), it would
+might be a better name to call this class just a Node or maybe Tree Node, because this class can be used
+in any tree, but I choose this name because I used it for the AvlTree, and it is obvious that this class
+could be used in any other tree
+AvlTree.java - this class inherit from BST, (Explained why I did this in the design section), this class
+represent the AvlTree.
+
+=============================
+=          Design           =
+=============================
+I choose to build 3 classes, BST (BinarySearchTree) and AvlNode and AvlTree.
+AvlTree inherit from BST because each AvlTree is BST just with the addition of the AVL propriety (of the
+heights). I choose not to do this class (the BST class ) abstract because there is actually logic to create
+instance of that class. (In addition many other trees use in their base the BST, so in the future it would be
+easier to build that trees (for example red-black tree also use in it's base BST).
+
+
+
+=============================
+=  Implementation details   =
+=============================
+
+
+=============================
+=    Answers to questions   =
+=============================
+Find a series of 12 numbers, such that when they are inserted into an empty AVL tree
+one-by-one, the result will be a tree of height 4
+
+Answer : 10, 5, 15 ,4 ,8, 12 , 19, 3, 11, 18, 20 , 21
+
+
+
+5.2 The complexity of constructing an AVL tree
+1. What is the asymptotic running time complexity of the tree construction done in AvlTree(int[]
+data)?
+
+the asymptotic running time complexity of the tree construction  is O(nlogn).
+(because there is n element and Inseration of 1 element at worst case would be the height of the array which
+is logn, so total n * log n)
+
+5.2.2 ANS - It would be O(n), if we take a sorted array, and make the middle of it the root, the element after
+the middle of the array would be right son, and the one before would be left son, and so on recursively
+
+5.3.1What is the asymptotic running time complexity of the tree construction done in
+AvlTree(AvlTree avlTree)?
+
+the asymptotic running time complexity of the tree construction  is O(n) because there is n nodes to copy,
+and we copy one by one.
+
+5.3.2What is the best possible running time complexity for a specific case?
+O(n) - because if we find the right one at first (which is already happen because the tree already ordered)
+
+5.4.1What is the asymptotic running time complexity of your implementation of the operation
+done in findMinNodes(int h)
+
+our implemention runs in O(h) as we iterate h time to count the nubmer of nodes of h- height
+
+5.4.2Is that the best possible asymptotic running time complexity? If not, what is the best
+achievable complexity?
+
+the  best running is O(logn) as we will be searching the minimal number will rely on the height of the tree
+
+
+
+Resubmission:
+Mainly change that added pointer to the "father" in LL and RR rotation.

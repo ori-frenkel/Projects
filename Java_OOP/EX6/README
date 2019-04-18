@@ -1,0 +1,59 @@
+ori.frenkel
+boazb
+
+=============================
+=      Design Decisions     =
+=============================
+
+There is explanation of each class in the class itself, and explaing the design Decisions in the 'answer
+to question' below
+
+
+
+=============================
+= Answer to questions =
+=============================
+6.1 Error Handling - We handle only IOexcpetion, we decided to that in order to keep the balance between
+simplicity and readability. we handle the message by - when an we encounter a IOexcpetion related problem
+we throw the exception up, and handle it in the main (Sjava). all the exception that we use inherit from
+JavacException , so the function that throws exception would throw this.
+
+6.2 Object Oriented Design -
+
+open/close - our code is easy to extend, we divided out code the a few small classes that each class
+responsible for different thing, that way it is easy to extend the code and hard to modify.
+
+Single Responsibility Principle - we divided to a few small classes and each class has a single responsibility
+, for example the Global class has only one responsibility - to take care of the global scope.
+
+Modularity - we divided the to a few small classes that each one responsible for different things,
+that way the code is much more readable, and even if someone doesn't understand the all project, he can easy
+understand specific class. (and a group of programmer can work on different classes in the project, without
+depending on the other group).
+
+Facade - in FunctionBlock class we using the Facade design pattern, this class is basically an arrayList,
+we use only a "face of it", so inorder to make it clearer and easier to understand we used the Facade
+
+Thinking procces - At first we thought keep an array of arrays, we would represent the scopes, than after
+thinking and looking up the design principles, we decided that this isn't a good idea and we decided to create
+a scope class which would represent the scope, that way is much more oop programming and much more clearer to
+understand, than we noticed that the global scope has uniquely properties, so we decided to create Global
+class - global scope "is a" scope - so it inherit from scope.
+
+- – Using methods of standart java
+It would quite easy to add support of this (because of our design choices),
+we would add in LineParser to the method parseMethodCall an array that specify which java built in function
+we need to support, and before the end of the function, we cheek if the function name is one of the name in
+the arrays and if so continue checks that the arguments is correct.
+
+Inheritage of files - we would just add the father file above the curr file. (or we could just run of the
+father code first, transfer all the information (scope etc) to the son, and run on the son.
+
+6.3 Regular Expressions - We thinks that the main regex that we use in the code, is the regex that checks
+if the name is correct, each time that we want to check if the name is correct we checks this using
+this 2 regex :
+validNameRegex ="^[a-zA-Z][a-zA-z0-9_]*"
+startWithUnderScoreValidRegex = "^[_][a-zA-Z0-9_]+";
+
+How would you modify your code to add new types of variables (e.g., float) -
+We would add to the Variable class in function getType, a case of the new type of variable

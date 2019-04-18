@@ -1,0 +1,45 @@
+ori.frenkel
+omer.amichay
+
+
+
+=============================
+=      File description     =
+=============================
+It can seen using the generated api
+
+=============================
+=          Design           =
+=============================
+We design using the principals that been thought in tirgul 8 and 9.
+First of all we used factory design pattern (in order to created the order and filer, there is filerFactory
+and OrderFactory), we decided to use it, so the code would be modular and easy to change, now if we want to
+add new filter/order, it can be done easily (just add it the the factory) and be done safely because we only
+tough the factory and no other classes.
+We as well used the design principal that says that one change in one class shouldn't change other class ( or
+effect very small number of class), we used it every where, most of the class linked in basic way, that change
+to one class wouldn't effect other classes.
+In order to organize everything, we created 3 more packages, Filter package that contains all the filter
+classes and related things. Order package  - contains all the order, orderfactory and everything that related
+to it. Exception package - contains all the exceptions.
+
+=============================
+=  Implementation details   =
+=============================
+All the filters inherit from Filter, an abstract class that contain all the things that filters should have,
+we choose to do it abstract because the is no logic/reason to use an instance of that class, this class it to
+abstract to create an instance of it. (and each filter "is a" Filter (the abstract class name)
+Same thing with the orders, we choose to create an abstract order class that contains function that each order
+class needs to have, we choose to do it abstract because this class is too abstract to create an instance of,
+and there is no reason/logic to do so. (each order "is a" OrderAbstract)
+All the exception implement ExceptionInterface which include GET_ERROR_MSG function, we use this in order to
+catch all the exception in on 'catch' and in that catch we call that function (this function print the right
+type 2 error). I choose to do interface because each exception would have different error msg, so there is no
+point to override it each time, each function need to implement is version of that function
+
+=============================
+=    Answers to questions   =
+=============================
+Answered the first 2 question in the above sections.
+I used collection in order to order the files, I choose it because it was the easiest and most recommended
+way to do it (according to the tirgul, built in function usually free of bugs and very efficient)
