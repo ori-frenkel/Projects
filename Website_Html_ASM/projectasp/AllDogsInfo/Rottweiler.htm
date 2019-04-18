@@ -1,0 +1,209 @@
+﻿
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Home Page</title>
+</head>
+<style type ="text/css" >
+    table td, table td * {
+    vertical-align: top;
+}
+    
+    button:hover { 
+    background-color: #555555;
+}
+   
+    h2 {
+    text-decoration: underline; 
+}
+    h1
+    {
+    padding: 20px;
+    color: black;
+    font-size: 20px;
+    
+    	
+    }
+    h3
+    {
+    	color: black;
+    	text-decoration: underline;
+    	font-size: 30px;
+    	 text-align: center;  */ אפשר לעשות center/Justify
+    }
+     h4
+    {
+    	color: white;
+    	font-size: 20px;
+    	 text-align: center; */ אפשר לעשות center/Justify
+    }
+    h7
+    {
+    	color: white;
+    	font-size: 20px;
+    }
+    button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+p.ex1 {
+    padding: 20px;
+}
+    p.ex2 {
+    padding: 20px;
+    color: black;
+    font-size: 20px;
+}
+/*------------------------------------------*/
+
+
+   </style>   <script type="text/javascript">
+                var pic=new Array();
+
+                pic[0] = "Rottweiler/Rottweiler.jpg";
+                pic[1] = "Rottweiler/Rottweiler1.jpg";
+                pic[2] = "Rottweiler/Rottweiler2.jpg";
+                pic[3] = "Rottweiler/Rottweiler3.jpg";
+                pic[4] = "Rottweiler/Rottweiler4.jpg";
+                var num=0;
+                function next_img()
+                {
+                  num++;
+                  if (num>pic.length-1)
+                      {num=0;}
+                  document.getElementById("pic").src=pic[num];
+                }
+                function back_img()
+                {
+                  num--;
+                  if (num < 0)
+                      {num=pic.length-1;}
+                  document.getElementById("pic").src=pic[num];
+                }    </script>  
+<body dir="rtl" >
+<center>
+<table width="90%">
+
+<tr >
+<td colspan="3" bgcolor="#E6E6FA" >
+     
+       <a href="../HTMLPageoldone.htm"><img src = "../dog1.png" width="400" height="200"  title="דף הבית" /></a>
+    
+</td>
+    
+    
+</tr>
+<tr >
+
+<td bgcolor="#006600" width="10%" >
+
+ <a href="login.htm"><button>התחבר</button></a>
+
+</td>
+<td bgcolor="#006600" width="10%" >
+
+ <a href="../register.htm"><button>הרשם</button></a>
+
+</td>
+<td bgcolor="#006600" width="70%" >
+
+</td>
+    
+    
+</tr>
+<tr >
+<td colspan="2" bgcolor="#4CAF50">
+<a href="../HTMLPageoldone.htm"><button>דף הבית</button></a>
+      <br />
+ <a href="../queiz.htm"><button>queiz</button></a>
+ <br />
+  <a href="NewFrBulldog.htm"><button>בולדוג צרפתי</button></a>
+  <br />
+   <a href="GermanShepherd.htm"><button>רואה גרמני</button></a>
+   <br />
+    <a href="Pug.htm"><button>פג סיני</button></a>
+    <br />
+     <a href="SiberianHusky.htm"><button>האסקי סיבירי</button></a>
+     <br />
+      <a href="register.htm"><button>שנאוצר</button></a>
+      <br />
+      <a href="register.htm"><button>דוברמן </button></a>
+      <br />
+      <a href="register.htm"><button>אקיטה אינו</button></a>
+      <br />
+      <a href="register.htm"><button>ביגל</button></a>
+      <br />
+      <a href="register.htm"><button>גולדן רטריבר</button></a>
+      <br />
+      <a href="register.htm"><button>ג'ק ראסל טרייר</button></a>
+      <br />
+      <a href="register.htm"><button>דלמטי</button></a>
+      <br />
+      <a href="register.htm"><button>רוטוויילר</button></a>
+      
+      
+</td>
+<td width="70%">
+<table width="100%">
+<tr >
+
+<td rowspan="2"></td>
+<h3>
+רוטוויילר  
+</h3>
+</td>
+ <td  width="80%">                        
+  <h1>מבוא:</h1>
+  
+<p class="ex1">
+כאשר אנחנו רואים כלב רוטוויילר מטייל, רובנו מתרחקים כמה צעדים לאחור וכל זאת בגלל המראה החיצוני המאיים.<br /> כלבי הרוטוויילר סובלים משם רע ומיחסי ציבור רעים עקב נשיכות של בני האדם לרבות ילדים קטנים, ולמעשה רוטוויילר הוא כלב ככל הכלבים.<br />
+
+טיפול ואילוף נכון יגרמו לרוטוויילר להתנהג בהתאם ומעבר לכך כלבי הרוטוויילר נאמנים ואוהבים את הבעלים אהבה אין סופית.
+
+
+</p>
+</td>
+<td>  <img src="Rottweiler/Rottweiler.jpg" style="width: 150px; height: 150px; float:inherit;" id="pic" />
+  <br /><br />
+   <input type="button" value="הקודם" onclick="back_img()" style=" float:inherit; padding:10px">
+   <input type="button" value="הבא" onclick="next_img()" style=" float:inherit; padding:10px">
+   </td>
+</tr>
+<tr >
+<td  colspan="2">
+<h1>
+רוטוויילר - מקור הגזע והיסטוריה:
+</h1>
+<p class="ex1"> 
+הרוטוויילר הוא כלב רועים במקור, אבל בשל המראה המאיים שלו, השתמשו בו הרומאים ללווי חיילי האימפריה במסעי הכיבוש שלהם, בציורים ובפסלים מהתקופה רואים את חיילי הכיבוש הרומי הולכים עם כל הציוד ולצידם מתהלכים הכלבים שצוירו ככלבים ענקיים ופראיים.<br />
+שם הגזע מגיע כנראה מהעיר רוטווייל - עיר מסחר של בקר.<br />
+כלבי הרוטוויילר שימשו את בני האדם בציד במשיכת העגלות ובשמירה על הבית. <br />
+עם הקדמה נושל הרוטוויילר מרוב משימותיו וכמעט נכחד, אבל בעזרת אנשים טובים נשמר הגזע. <br />
+בהרבה מדינות בעולם נכלל הרוטוויילר ככלב מסוכן ויש הנחיות ספציפיות לגבי אופן ההחזקה וההולכה של הכלב, גם בישראל נחשב הכלב כגזע מסוכן.
+
+
+</p>
+<h1>רוטוויילר - נתונים ומאפיינים:</h1>
+<p class="ex1">
+מבנה גופו של הרוטוויילר מוצק ושרירי, פרוותו קצרה וצבע הפרווה שחור וכתמים חומים באזור החזה והפנים, אוזניים קטנות ואף רחב.<br />
+משקל:40-55 ק"ג.<br /> גובה:55-70 ס"מ.
+
+</p>
+
+</td >
+<td>  </td>
+</tr>
+  
+  
+</table>
+</td>
+</tr>
+</table>
+</center>
+</body>
+</html>

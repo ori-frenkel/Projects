@@ -1,0 +1,207 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Home Page</title>
+</head>
+<style type ="text/css" >
+    table td, table td * {
+    vertical-align: top;
+}
+    
+    button:hover { 
+    background-color: #555555;
+}
+   
+    h2 {
+    text-decoration: underline; 
+}
+    h1
+    {
+    padding: 20px;
+    color: black;
+    font-size: 20px;
+    
+    	
+    }
+    h3
+    {
+    	color: black;
+    	text-decoration: underline;
+    	font-size: 30px;
+    	 text-align: center;  */ אפשר לעשות center/Justify
+    }
+     h4
+    {
+    	color: white;
+    	font-size: 20px;
+    	 text-align: center; */ אפשר לעשות center/Justify
+    }
+    h7
+    {
+    	color: white;
+    	font-size: 20px;
+    }
+    button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+p.ex1 {
+    padding: 20px;
+}
+    p.ex2 {
+    padding: 20px;
+    color: black;
+    font-size: 20px;
+}
+/*------------------------------------------*/
+
+
+   </style>   <script type="text/javascript">
+                var pic=new Array();
+
+                pic[0] = "SiberianHuskyMain.jpg";
+                pic[1] = "SiberianHusky1.jpg";
+                pic[2] = "SiberianHusky2.jpg";
+                pic[3] = "SiberianHusky3.jpg";
+                pic[4] = "SiberianHusky4.jpg";
+                var num=0;
+                function next_img()
+                {
+                  num++;
+                  if (num>pic.length-1)
+                      {num=0;}
+                  document.getElementById("pic").src=pic[num];
+                }
+                function back_img()
+                {
+                  num--;
+                  if (num < 0)
+                      {num=pic.length-1;}
+                  document.getElementById("pic").src=pic[num];
+                }    </script>  
+<body dir="rtl" >
+<center>
+<table width="90%">
+
+<tr >
+<td colspan="3" bgcolor="#E6E6FA" >
+     
+       <a href="../HTMLPageoldone.htm"><img src = "../dog1.png" width="400" height="200"  title="דף הבית" /></a>
+    
+</td>
+    
+    
+</tr>
+<tr >
+
+<td bgcolor="#006600" width="10%" >
+
+ <a href="login.htm"><button>התחבר</button></a>
+
+</td>
+<td bgcolor="#006600" width="10%" >
+
+ <a href="../RegisterTemp.htm"><button>הרשם</button></a>
+
+</td>
+<td bgcolor="#006600" width="70%" >
+
+</td>
+    
+    
+</tr>
+<tr >
+<td colspan="2" bgcolor="#4CAF50">
+<a href="../HTMLPageoldone.htm"><button>דף הבית</button></a>
+      <br />
+ <a href="../queiz.htm"><button>queiz</button></a>
+ <br />
+  <a href="NewFrBulldog.htm"><button>בולדוג צרפתי</button></a>
+  <br />
+   <a href="register.htm"><button>רואה גרמני</button></a>
+   <br />
+    <a href="register.htm"><button>פג סיני</button></a>
+    <br />
+     <a href="register.htm"><button>האסקי סיבירי</button></a>
+     <br />
+      <a href="register.htm"><button>שנאוצר</button></a>
+      <br />
+      <a href="register.htm"><button>דוברמן </button></a>
+      <br />
+      <a href="register.htm"><button>אקיטה אינו</button></a>
+      <br />
+      <a href="register.htm"><button>ביגל</button></a>
+      <br />
+      <a href="register.htm"><button>גולדן רטריבר</button></a>
+      <br />
+      <a href="register.htm"><button>ג'ק ראסל טרייר</button></a>
+      <br />
+      <a href="register.htm"><button>דלמטי</button></a>
+      <br />
+      <a href="register.htm"><button>רוטוויילר</button></a>
+      
+      
+</td>
+<td width="70%">
+<table width="100%">
+<tr >
+
+<td rowspan="2"></td>
+<h3>
+האסקי סיבירי  
+</h3>
+</td>
+ <td  width="80%">                        
+  <h1>מבוא:</h1>
+  
+<p class="ex1">
+האסקי סיבירי הינו כלב עבודה שמוצאו במזרח סיביר. ההאסקי מוכר בזכות פרוותו הכפולה והעבה, אוזניו העומדות והופעתו המכובדת. גזע פעיל ואנרגטי שאבותיו הגיעו מן הקור הקיצוני של סיביר הארקטית. במהלך תקופת הבהלה לזהב, הובא ההאסקי אל אלסקה ומשם הופץ לארצות הברית, קנדה ובהמשך לשאר העולם.<br /> הסיבירי, שהתחיל את דרכו ככלב מזחלות, כיום משמש כחיית מחמד חברותית ומשפחתית.
+
+
+</p>
+</td>
+<td>  <img src="SiberianHusky4.jpg" style="width: 150px; height: 150px; float:inherit;" id="pic" />
+  <br /><br />
+   <input type="button" value="הקודם" onclick="back_img()" style=" float:inherit; padding:10px"/>
+   <input type="button" value="הבא" onclick="next_img()" style=" float:inherit; padding:10px"/>
+   </td>
+</tr>
+<tr > 
+<td  colspan="2">
+<h1>
+האסקי סיבירי - מקור הגזע והיסטוריה:
+</h1>
+<p class="ex1"> 
+מקורו של ההאסקי הסיבירי בשבט נודד ממזרח סיביר (הצ'וקצ'ים), שהשתמשו בהם על מנת לגרור מזחלות למרחק גדול ובתנאי מזג אוויר קשים.<br /> כיום משמש ההאסקי גם במירוצי מזחלות ופופולרי מאוד כחיית מחמד בשל אופיו החברותי.<br />
+גילו של גזע זה נאמד בכשלושת אלפים שנה. במבנהו ההאסקי מזכיר את הזאב ומילל במקום לנבוח.<br />
+למרות שימושם ככלבי מזחלות בעבר הרחוק, גזע האסקי סיבירי התחבב מאוד על בני האדם וקיבל מעמד של חיית מחמד. בשל ההיסטוריה הנרחבת של האסקי סיבירי ככלב מזחלות, הינו מסוגל להסתגל במהירות לתנאי מזג אוויר קשים מאוד. ידועים כיום על מספר סוגים/גזעים שהתפתחו עם הזמן בהתאם לתנאי המחיה שלהם: האסקי סבירי, ההאסקי הגרינלנדי, ההאסקי האלסקי ואסקי נהר המקנזי.
+
+</p>
+<h1>טיפוח האסקי סיבירי</h1>
+<p class="ex1"> 
+הפרווה העבה לא זקוקה לטיפול מיוחד, חוץ מאשר פעמיים בשנה בהן חלה תקופת נשירה כבדה מאוד ויש צורך לסרק ולהבריש את הכלב עם מברשת ברזל קשיחה. <br />
+ההאסקי סיבירי משיר את פרוותו בצורה ממוצעת.
+</p>
+<h1>האסקי סיבירי - נתונים ומאפיינים:</h1>
+<p class="ex1">
+כלב האסקי הוא כלב בגודל בינוני, ונחשב לכלב מרשים ויפה.<br /> פרוותו סמיכה, רכה ונעימה למגע, מנשירה בדרך כלל פעמיים בשנה (תזונה לא מתאימה תביא לנשירה תדירה יותר).<br /> צבע פרוותו נע מלבן לגמרי ועד שחור, בדרך כלל לבן עם צבע אחד נוסף כמו שחור, אפור וגוונים של חום-אדום. לבן עם כתמים לא סימטריים הוא תקין. משקלו נע בין 16 ק"ג עד 30 ק"ג. גובהו בין 50-70 ס"מ, צבע עיניים: <span style="color:#00FFFF;font-weight:bold">מתכלת</span> עד <span style="color:brown;font-weight:bold">חום כהה</span>.<br /> עין מכל צבע או שילוב של שני הצבעים באותה עין מקובל.<br /> תוחלת חייו 12-14 שנים.
+
+
+
+</p>
+</td >
+<td>  </td>
+</tr>
+  
+  
+</table>
+</td>
+</tr>
+</table>
+</body>
+</html>

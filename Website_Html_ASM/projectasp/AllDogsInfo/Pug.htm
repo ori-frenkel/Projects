@@ -1,0 +1,212 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Home Page</title>
+</head>
+<style type ="text/css" >
+    table td, table td * {
+    vertical-align: top;
+}
+    
+    button:hover { 
+    background-color: #555555;
+}
+   
+    h2 {
+    text-decoration: underline; 
+}
+    h1
+    {
+    padding: 20px;
+    color: black;
+    font-size: 20px;
+    
+    	
+    }
+    h3
+    {
+    	color: black;
+    	text-decoration: underline;
+    	font-size: 30px;
+    	 text-align: center;  */ אפשר לעשות center/Justify
+    }
+     h4
+    {
+    	color: white;
+    	font-size: 20px;
+    	 text-align: center; */ אפשר לעשות center/Justify
+    }
+    h7
+    {
+    	color: white;
+    	font-size: 20px;
+    }
+    button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+p.ex1 {
+    padding: 20px;
+}
+    p.ex2 {
+    padding: 20px;
+    color: black;
+    font-size: 20px;
+}
+/*------------------------------------------*/
+
+
+   </style>   <script type="text/javascript">
+                var pic=new Array();
+
+                pic[0] = "pug.jpg";
+                pic[1] = "pug1.jpg";
+                pic[2] = "pug4.jpg";
+                pic[3] = "pug3.jpg";
+                pic[4] = "pug2.jpg";
+                var num=0;
+                function next_img()
+                {
+                  num++;
+                  if (num>pic.length-1)
+                      {num=0;}
+                  document.getElementById("pic").src=pic[num];
+                }
+                function back_img()
+                {
+                  num--;
+                  if (num < 0)
+                      {num=pic.length-1;}
+                  document.getElementById("pic").src=pic[num];
+                }    </script>  
+<body dir="rtl" >
+<center>
+<table width="90%">
+
+<tr >
+<td colspan="3" bgcolor="#E6E6FA" >
+     <!--  <img src="dog1.png" width="400" height="200" /> -->
+       <a href="../HTMLPageoldone.htm"><img src = "IMG/dog1.png" width="400" height="200"  title="דף הבית" /></a>
+    
+</td>
+    
+    
+</tr>
+<tr >
+
+<td bgcolor="#006600" width="10%" >
+
+ <a href="login.htm"><button>התחבר</button></a>
+
+</td>
+<td bgcolor="#006600" width="10%" >
+
+ <a href="../register.htm"><button>הרשם</button></a>
+
+</td>
+<td bgcolor="#006600" width="70%" >
+
+</td>
+    
+    
+</tr>
+<tr >
+<td colspan="2" bgcolor="#4CAF50">
+<a href="../HTMLPageoldone.htm"><button>דף הבית</button></a>
+      <br />
+ <a href="../queiz.htm"><button>queiz</button></a>
+ <br />
+  <a href="NewFrBulldog.htm"><button>בולדוג צרפתי</button></a>
+  <br />
+   <a href="register.htm"><button>רואה גרמני</button></a>
+   <br />
+    <a href="register.htm"><button>פג סיני</button></a>
+    <br />
+     <a href="register.htm"><button>האסקי סיבירי</button></a>
+     <br />
+      <a href="register.htm"><button>שנאוצר</button></a>
+      <br />
+      <a href="register.htm"><button>דוברמן </button></a>
+      <br />
+      <a href="register.htm"><button>אקיטה אינו</button></a>
+      <br />
+      <a href="register.htm"><button>ביגל</button></a>
+      <br />
+      <a href="register.htm"><button>גולדן רטריבר</button></a>
+      <br />
+      <a href="register.htm"><button>ג'ק ראסל טרייר</button></a>
+      <br />
+      <a href="register.htm"><button>דלמטי</button></a>
+      <br />
+      <a href="register.htm"><button>רוטוויילר</button></a>
+      
+      
+</td>
+<td width="70%">
+<table width="100%">
+<tr >
+
+<td rowspan="2"></td>
+<h3>
+פאג  
+</h3>
+</td>
+ <td  width="80%">                        
+  <h1>מבוא:</h1>
+  
+<p class="ex1">
+כלבים מילאו תפקידים רבים בשירות בני האדם לדוגמא ברעיית הצאן ובעזרה בציד. <br />
+אבל מעבר למשימות חשובות ומועילות, כלבים שימשו גם כמקור שעשוע לבני האדם. <br />
+הפאג החמוד הוא אחד מאותם גזעים. הוא כלב קטנטן אבל עם אופי ענק.<br />
+</p>
+</td>
+<td>  <img src="pug.jpg" style="width: 150px; height: 150px; float:inherit;" id="pic" />
+  <br /><br />
+   <input type="button" value="הקודם" onclick="back_img()" style=" float:inherit; padding:10px">
+   <input type="button" value="הבא" onclick="next_img()" style=" float:inherit; padding:10px">
+   </td>
+</tr>
+<tr > 
+<td  colspan="2">
+<h1>
+פאג - מקור הגזע והיסטוריה:
+</h1>
+<p class="ex1">
+מקור הגזע מגיע מסין הרחוקה, שם גודל ע"י נזירים. <br />
+לאחר מכן הגיע לאירופה בערך במאה 15 והפופולאריות שלו רק עלתה. רבים מבני האצולה גידלו להנאתם פאג, ואנשים ידועים כמו מרי אנטוונט, נפוליאון וג'וזפין גידלו פאג להנאתם.<br />
+מקור השם מגיע מהאנגלית העתיקה puge שכוונתה היא לשדון משחק חמוד.
+</p>
+<h1> טיפול בפאג הסיני </h1>
+<p class="ex1">
+פרוותו של הפאג קצרה ועורו מלא בקמטים וקפלים ולכן יש לנקות פעם בשבוע את הקפלים בעזרת צמר גפן.<br /> ללא טיפול זה, הפאג יסבול מבעיות עור.<br />
+
+הטיולים עם הפאג צריכים להיות קצרים במיוחד בימים חמים ויש לשים לב לקצב הנשימה של הפאג. במהלך הטיול כאשר הפאג נושם מהר מידי יש להרגיע את קצב הטיול.<br /> לפאג יש קושי בלהוציא את הלשון החוצה ולנשום מהר ולכן בימים חמים חובה לסדר לפאג מקום מוצל וקריר. לפאג יש עיניים בולטות מה שגורם לדלקות ומחלות עיניים שונות.
+</p>
+<h1>פאג- נתונים ומאפיינים:</h1>
+<p class="ex1">
+ארץ מקור:	סין<br />
+משקל:	6-12 ק"ג<br />
+גובה:	25-28 ס"מ<br />
+תוחלת חיים:	12-18 שנים<br />
+תיאור:	צבע - גוונים שונים של <span style="color:brown;font-weight:bold">חום</span> <span style="color:black;font-weight:bold">ושחור</span><br />
+אופי:	נוח, ידידותי ומלא שמחה<br />
+שימוש:	כלב שעשועים<br />
+אילוף:	הסתגלות גבוהה<br />
+
+</p>
+</td >
+<td>  </td>
+</tr>
+  
+  
+</table>
+</td>
+</tr>
+</table>
+</body>
+</html>
