@@ -1,0 +1,165 @@
+####################################################
+# File : math_print.py
+# Writer Ori Frenkel , ori.frenkel , 314643164
+# EXERCISE : intro2cs ex4 2017-2018
+# DESCRIPTION : Practice math function
+# the standard output (screen) .
+####################################################
+from ex4 import hangman_helper
+
+
+def update_word_pattern(word, pattern, letter):
+    """converting the strings word and letter to a list because string is"""
+    """immutable"""
+    word = list(word)
+    pattern = list(pattern)
+    """Checking every index in the word, if a certain index in word is the """
+    """same character as in the letter, it will update the pattern"""
+    """and the pattern would include the character(letter) in this index"""
+    for i in range(len(word)):
+        if letter == word[i]:
+            pattern[i] = letter
+    """at the end converting again the pattern from list to string"""
+    return ''.join(pattern)
+
+
+"""I used this website for help"""
+
+"""https://stackoverflow.com/questions/5618878/how-to-convert-list-to-string"""
+def gameover(pattern):
+    if '_' in pattern:
+        return True
+    else:
+        return False
+
+
+def already_chosen(input_t, chosen_letter_lst):
+    for i in range(0, len(chosen_letter_lst)):
+        if chosen_letter_lst[i] == input_t:
+            return True
+    return False
+
+def letter_in_word(input_t, word):
+    """Checking if letter is in the word"""
+    pattern = list(word)
+    for i in range(0, len(word)):
+        if pattern[i] == input_t:
+            return True
+    return False
+
+
+def run_single_game(words_list):
+    global msg
+    random_word = hangman_helper.get_random_word(words_list)
+    pattern = ''
+    """create a pattern that is full hide, meaning the string _ times as"""
+    """the word length"""
+    pattern = len(random_word) * '_'
+    wrong_guess = 0
+    """making it a set as requested no repeats"""
+    wrong_guess_lst = set()
+    """The message that the user gets when he start the game"""
+    msg = hangman_helper.DEFAULT_MSG
+    """This while in till the game is over"""
+    chosen_letter_lst = []
+    while wrong_guess < hangman_helper.MAX_ERRORS and gameover(pattern):
+        hangman_helper.display_state(pattern, wrong_guess, wrong_guess_lst,
+                                     msg, ask_play=False)
+
+        status, input_t = hangman_helper.get_input()
+        if status == hangman_helper.LETTER:
+            """filter_words_list(random_word, pattern, wrong_guess_lst)"""
+            # choose_letter(random_word, pattern)
+            # hangman_helper.display_state()
+            """Checking if the input is correct, the input must be"""
+            """length 1 only letters and only small letter"""
+            if input_t == input_t.isupper() or len(input_t) != 1 or \
+            input_t.isalpha() is False:
+                msg = hangman_helper.NON_VALID_MSG
+            elif already_chosen(input_t, chosen_letter_lst):
+                msg = hangman_helper.ALREADY_CHOSEN_MSG + input_t
+            elif letter_in_word(input_t, random_word):
+                pattern = update_word_pattern(random_word, pattern, input_t)
+                msg = hangman_helper.DEFAULT_MSG
+            else:
+                wrong_guess += 1
+                wrong_guess_lst.add(input_t)
+                msg = hangman_helper.DEFAULT_MSG
+        elif status == hangman_helper.HINT:  # אם חלק ב לא מומש
+            msg = hangman_helper.NO_HINTS_MSG
+        chosen_letter_lst += str(input_t)
+    if gameover(pattern):
+        msg = hangman_helper.LOSS_MSG + random_word
+        hangman_helper.display_state(pattern, wrong_guess, wrong_guess_lst,
+                                     msg, ask_play=True)
+    else:
+        msg = hangman_helper.WIN_MSG
+        hangman_helper.display_state(pattern, wrong_guess, wrong_guess_lst,
+                                     msg, ask_play=True)
+
+def main():
+    words_list = hangman_helper.load_words()
+    run_single_game(words_list)
+    status, input_t = hangman_helper.get_input()
+    while status == hangman_helper.PLAY_AGAIN and input_t:
+        run_single_game(words_list)
+        status, input_t = hangman_helper.get_input()
+
+
+
+if __name__ == "__main__":
+    hangman_helper.start_gui_and_call_main(main)
+    hangman_helper.close_gui()
+
+def is_it_contain(word, wrong_guess_lst):
+    """Check if the word contain a Letter from the wrong list"""
+    for i in range(len(0, len(wrong_guess_lst))):
+        for j in range(0, len(word)):
+            if wrong_guess_lst[i] == word[j]:
+                return True
+    return False
+
+def same_letter_same_index(word, pattern):
+    count = 0
+    list_t = []
+    for i in range(len(pattern)):
+        if pattern[i] != '_' and word[i] == pattern[i]:
+            list_t += word[i]
+            count += 1
+            continue
+        elif pattern[i] != '_' and word[i] != pattern[i]:
+            return False
+    return True
+
+
+def filter_words_list(words, pattern, wrong_guess_lst):
+    new_words_list = []
+    for i in range(0, len(words)):
+        if len(words[i]) != len(pattern):
+            continue
+        if is_it_contain(words[i], wrong_guess_lst):
+            continue
+        if same_letter_same_index(words[i], pattern):
+            new_words_list += words[i]
+    return new_words_list
+
+def choose_letter(words, pattern):
+    """Counter('abracadabra').most_common(3)"""
+    counters = []
+    # We initialize the list so that we can run on its limbs properly.
+    for i in range(26):
+        counters.append(0)
+    # The loop runs on all the letters. If there is a letter that already exists
+    # that is part of the word. Then we do not want it.
+    # So the loop goes on without counting it.Every time there's another letter
+    # the loop counts it.
+    for word in words:
+        for i in range(26):
+            letter = hangman_helper.index_to_letter(i)
+            if letter in pattern:
+                continue
+            # Here, the counting of a specific letter
+            counters[i] += word.count(letter)
+    # Using the Max function we return the letter that appears most often from
+    # our list
+    return hangman_helper.index_to_letter(counters.index(max(counters)))
