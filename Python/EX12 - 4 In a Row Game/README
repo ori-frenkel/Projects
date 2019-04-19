@@ -1,13 +1,22 @@
 ori.frenkel
 314643164
-אורי פרנקל Ori Frenkel
+Ori Frenkel
 
 I discussed the exercise with:No one.
 
 =============================
-=  README for ex12:   =
+=  Instruction on how to run the game:   =
 =============================
+Firstly you need to run the program with this arguments: (is_human/ai) (port)
+Than run the same program with this arguments: (is_human/ai) (port) (ip)
 
+
+first run = you are the host of the game.
+second run = you need to connect to the host in order to play against him.
+is_human - meaning that the player will be human.
+ai - the player will be an easy ai.
+port -The port number used for communication
+ip - only on the second run of the program, the ip where the host is. Needed in order to conncect to the host.
 
 ==================
 =  Description:  =
@@ -23,7 +32,7 @@ from diffrent computer in the same network
 ======================
 explanation of each function in the files
 
-<recommended – list of submitted files>
+<recommended ג€“ list of submitted files>
 four_in_a_row.py -
 The Main - responsible for the GUI and to run
 the game
