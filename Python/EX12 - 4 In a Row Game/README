@@ -1,0 +1,36 @@
+ori.frenkel
+314643164
+אורי פרנקל Ori Frenkel
+
+I discussed the exercise with:No one.
+
+=============================
+=  README for ex12:   =
+=============================
+
+
+==================
+=  Description:  =
+==================
+Practicing GUI and connection
+Creating a 4 In A Row Game with ai, and connected game -
+
+meaning 2 player could play against each other
+
+from diffrent computer in the same network 
+======================
+=  Special Comments  =
+======================
+explanation of each function in the files
+
+<recommended – list of submitted files>
+four_in_a_row.py -
+The Main - responsible for the GUI and to run
+the game
+communicator.py - 
+resposible for thr communication
+ai.py -
+resposible for the ai and it's logic
+intro2cs.gif
+README
+
