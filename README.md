@@ -1,2 +1,2 @@
 # Projects
-This are some projects that I did thorugh the years
+These are some projects that I made through the years
